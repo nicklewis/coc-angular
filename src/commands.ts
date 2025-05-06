@@ -118,7 +118,7 @@ function goToComponentWithTemplateFile(ngClient: AngularLanguageClient): Command
       }
 
       const locations: vscode.Location[] =
-          componentLocations.map(location => vscode.Location.create(location.uri, location.range));
+          componentLocations.map(location => vscode.Location.create(location.uri.toString(), location.range));
       // If there is more than one component that references the template, show them all. Otherwise
       // go to the component immediately.
       if (locations.length > 1) {

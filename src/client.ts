@@ -480,7 +480,7 @@ export class AngularLanguageClient implements vscode.Disposable {
     const p2cConverter = protocol2CodeConverter;
     // Convert the response from LSP back to vscode.
     return {
-      uri: p2cConverter.asUri(response.uri),
+      uri: p2cConverter.asUri(response.uri.toString()),
       content: response.content,
       selections: response.selections || [],
     };
